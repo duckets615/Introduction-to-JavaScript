@@ -105,12 +105,37 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
-
-
-
+// function hungryDog(wt, age){
+//     if (age >= 1) {
+//       switch(wt) {
+//         case wt <= 5: return wt * .05;
+//           break;
+//         case wt <= 10: return wt * 04;
+//           break;
+//         case wt <= 15: return wt * .03;
+//           break;
+//         default: return wt * .02;
+//       }
+//     } else {
+//       switch(age) {
+//         case age <= 4/12: return wt * .1;
+//           break;
+//         case age <= 7/12: return wt * .05;
+//           break;
+//         default: return wt * .04
+//       }
+//     }
+//   }
+function hungryDog(wt, age){
+  if (age <= 4/12) return wt * .1
+  if (age <= 7/12) return wt * .05
+  if (age <= 1) return wt * .04
+  if (wt <= 5) return wt * .05
+  if (wt <= 10) return wt * .04
+  if (wt <= 15) return wt * .03
+  return wt * .02
+}
+console.log(hungryDog(15,1)) // 0.44999999999999996);
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Rock, Paper, Scissors - Let's play against the computer!
@@ -131,13 +156,24 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
-function game(user, computer){
-    /*add your code here*/
+function computerHand() {
+  let num = Math.round(Math.random() * 3);
+  switch(num) {
+    case 0: return 'Rock';
+    case 1: return 'Scissors';
+    default: return "Paper"
+  }
 }
-  
-  
 
+function game(user){
+  let cpu = computerHand();
+  switch(user,cpu) 
+}
+  // console.log(game('me'));
+  
+  // - win should return "you win!"
+  // - lose should return "you lose!"
+  // - tie should return "it's a tie"
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter 
@@ -224,20 +260,20 @@ function vowelCounter(/*add your code here*/) {
 
 
 
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-    //console.log('its working');
-    return 'bar';
-}
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-export default{
-    foo,
-    multiply,
-    dogYears,
-    hungryDog,
-    game,
-    miles,
-    feet,
-    annoyingSong,
-    grade
-}
+// /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+// function foo(){
+//     //console.log('its working');
+//     return 'bar';
+// }
+// /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+// export default{
+//     foo,
+//     multiply,
+//     dogYears,
+//     hungryDog,
+//     game,
+//     miles,
+//     feet,
+//     annoyingSong,
+//     grade
+// }
