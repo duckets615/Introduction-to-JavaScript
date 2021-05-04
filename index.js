@@ -164,12 +164,21 @@ function computerHand() {
     default: return "Paper"
   }
 }
-
 function game(user){
+  if (!['Rock','Paper','Scissors'].includes(user)) return "Invalid choice"
   let cpu = computerHand();
-  switch(user,cpu) 
+  console.log(`Computer throws: ${cpu}`);
+  console.log(`User throws: ${user}`);  
+    if (user === 'Rock' && cpu === 'Paper') return "you lose!";
+    if (user === 'Rock' && cpu === 'Scissors') return "you win!";
+    if (user === 'Scissors' && cpu === 'Paper') return "you win!";
+    if (user === 'Scissors' && cpu === 'Rock') return "you lose!";
+    if (user === 'Paper' && cpu === 'Rock') return "you win!";
+    if (user === 'Paper' && cpu === 'Scissors') return "you lose!";
+    return "it's a tie";
 }
-  // console.log(game('me'));
+
+  console.log(game('Rock'));
   
   // - win should return "you win!"
   // - lose should return "you lose!"
