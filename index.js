@@ -265,16 +265,18 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(str) {
-  let count = 0;
-  length = str.length;
-  for (let i = 0; i < length; i++) {
-    if (['a','A','e','E','i','I','o','O','u','U'].includes(str[i])) count++
-  }
-  return count;
-}
+// function vowelCounter(str) {
+//   let count = 0;
+//   length = str.length;
+//   for (let i = 0; i < length; i++) {
+//     if (['a','A','e','E','i','I','o','O','u','U'].includes(str[i])) count++
+//   }
+//   return count;
+// }
 
+const vowelCounter = str => str.split('').filter(char => char.match(/[aeiouAEIOU]/)).length
 
+console.log(vowelCounter('hello'));
 
 // /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 // function foo(){
