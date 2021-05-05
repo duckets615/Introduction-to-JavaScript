@@ -18,7 +18,7 @@ Do the following:
    HINT: no function required
 */
 let votingAge = 18
-console.log(votingAge >= 18);
+// console.log(votingAge >= 18);
 /*
 Task 1b - Values
 
@@ -31,7 +31,7 @@ Do the following:
 */
 let action = 'Go'
 let light = 'Red'
-console.log(light === 'Red' ? 'Stop' : 'Go');
+// console.log(light === 'Red' ? 'Stop' : 'Go');
 
 
 
@@ -49,7 +49,7 @@ Do the following:
 
 let year = '1999';
 year = +year
-console.log(year);
+// console.log(year);
 
 
 /*
@@ -135,7 +135,7 @@ function hungryDog(wt, age){
   if (wt <= 15) return wt * .03
   return wt * .02
 }
-console.log(hungryDog(15,1)) // 0.44999999999999996);
+// console.log(hungryDog(15,1)) // 0.44999999999999996);
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Rock, Paper, Scissors - Let's play against the computer!
@@ -165,24 +165,19 @@ function computerHand() {
   }
 }
 function game(user){
-  if (!['Rock','Paper','Scissors'].includes(user)) return "Invalid choice"
+  if (!['rock','paper','scissors'].includes(user)) return "Invalid choice"
   let cpu = computerHand();
-  console.log(`Computer throws: ${cpu}`);
-  console.log(`User throws: ${user}`);  
-    if (user === 'Rock' && cpu === 'Paper') return "you lose!";
-    if (user === 'Rock' && cpu === 'Scissors') return "you win!";
-    if (user === 'Scissors' && cpu === 'Paper') return "you win!";
-    if (user === 'Scissors' && cpu === 'Rock') return "you lose!";
-    if (user === 'Paper' && cpu === 'Rock') return "you win!";
-    if (user === 'Paper' && cpu === 'Scissors') return "you lose!";
+  if (user === 'rock' && cpu === 'paper') return "you lose!";
+  if (user === 'rock' && cpu === 'scissors') return "you win!";
+  if (user === 'scissors' && cpu === 'paper') return "you win!";
+  if (user === 'scissors' && cpu === 'rock') return "you lose!";
+  if (user === 'paper' && cpu === 'rock') return "you win!";
+  if (user === 'paper' && cpu === 'scissors') return "you lose!";
     return "it's a tie";
 }
 
-  console.log(game('Rock'));
-  
-  // - win should return "you win!"
-  // - lose should return "you lose!"
-  // - tie should return "it's a tie"
+  // console.log(game('rock'));
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter 
@@ -194,11 +189,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+const miles = km => (km * 0.62137119);
 
-
+// console.log(miles(16));
 
 //Task 5b - Feet to CM
 /*
@@ -208,9 +201,7 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+const feet = cm => cm / 30.48
  
 
 
@@ -222,15 +213,20 @@ Using the annoyingSong function below do the following:
   1. Receive a starting number and start the count down from the number received 
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
-*/
-
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
-
-
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
+      */
+     
+    //  function annoyingSong(number){
+    //    if (number === 1) return `1 bottles of soda on the wall, 1 bottles of soda, take one down pass it around 0 bottles of soda on the wall`
+    //    console.log(`${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall`)
+    //    annoyingSong(number-1)
+    //   }
+      function annoyingSong(number){
+        return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall"`
+        
+      }
+      console.log(annoyingSong(10));
+      /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+      
 //Grade Calculator
 /*
 Using the grade function below do the following: 
@@ -244,9 +240,15 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  switch(score){
+    case score >= 90: return 'you got an A'
+    case score >= 80: return 'you got a B'
+    case score >= 70: return 'you got a C'
+    case score >= 60: return 'you got a D'
+    default: return 'you got an F'
   }
+}
   
   
 
@@ -263,8 +265,13 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(str) {
+  let count = 0;
+  length = str.length;
+  for (let i = 0; i < length; i++) {
+    if (['a','A','e','E','i','I','o','O','u','U'].includes(str[i])) count++
+  }
+  return count;
 }
 
 
